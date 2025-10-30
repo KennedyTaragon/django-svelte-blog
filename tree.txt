@@ -1,0 +1,34 @@
+.
+├── backend
+│   ├── blog_system
+│   │   ├── asgi.py
+│   │   ├── __init__.py
+│   │   ├── settings.py
+│   │   ├── urls.py
+│   │   └── wsgi.py
+│   ├── db.sqlite3
+│   ├── manage.py
+│   ├── posts
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── __init__.py
+│   │   ├── models.py
+│   │   ├── permissions.py
+│   │   ├── serializers.py
+│   │   ├── tests.py
+│   │   ├── urls.py
+│   │   └── views.py
+│   ├── requirements.txt
+│   └── start.sh
+└── frontend
+    ├── package.json
+    ├── package-lock.json
+    ├── README.md
+    ├── rollup.config.js
+    ├── scripts
+    │   └── setupTypeScript.js
+    └── src
+        ├── App.svelte
+        └── main.js
+
+7 directories, 25 files
