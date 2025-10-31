@@ -31,7 +31,7 @@ ALLOWED_HOSTS = ['127.0.0.10']
 # Application definition
 
 INSTALLED_APPS = [
-    'unfold',
+    #'unfold',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,7 +41,14 @@ INSTALLED_APPS = [
 
     #3rd party
     'rest_framework',
+    'rest_framework.authtoken',
+    'dj_rest_auth',
     'corsheaders',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'dj_rest_auth.registration',
+
 
 
     #local
@@ -50,10 +57,18 @@ INSTALLED_APPS = [
 
 REST_FRAMEWORK = {
 'DEFAULT_PERMISSION_CLASSES': [
-    # 'rest_framework.permissions.IsAuthenticated',
-    'rest_framework.permissions.AllowAny',
-]
+    'rest_framework.permissions.IsAuthenticated',
+    #'rest_framework.permissions.AllowAny',
+],
+'DEFAULT_AUTHENTICATION_CLASSES': [
+    'rest_framework.authentication.SessionAuthentication',
+    'rest_framework.authentication.TokenAuthentication'
+],
+
 }
+
+
+
 CORS_ORIGIN_WHITELIST = (
 'http://localhost:8080',
 'http://127.0.0.10:8010',
@@ -68,6 +83,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    #the account middleware:
+    "allauth.account.middleware.AccountMiddleware",
 ]
 
 ROOT_URLCONF = 'blog_system.urls'
@@ -99,6 +117,8 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+
 
 
 # Password validation
@@ -141,3 +161,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+SITE_ID = 1
