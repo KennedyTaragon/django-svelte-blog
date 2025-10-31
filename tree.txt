@@ -20,15 +20,19 @@
 │   │   └── views.py
 │   ├── requirements.txt
 │   └── start.sh
-└── frontend
-    ├── package.json
-    ├── package-lock.json
-    ├── README.md
-    ├── rollup.config.js
-    ├── scripts
-    │   └── setupTypeScript.js
-    └── src
-        ├── App.svelte
-        └── main.js
+├── frontend
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── README.md
+│   ├── rollup.config.js
+│   ├── scripts
+│   │   └── setupTypeScript.js
+│   └── src
+│       ├── api.js
+│       ├── App.svelte
+│       ├── Components
+│       │   └── Posts.svelte
+│       └── main.js
+└── README.md
 
-7 directories, 25 files
+8 directories, 28 files

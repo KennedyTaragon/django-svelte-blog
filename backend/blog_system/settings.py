@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     #3rd party
     'rest_framework',
+    'corsheaders',
 
 
     #local
@@ -49,13 +50,19 @@ INSTALLED_APPS = [
 
 REST_FRAMEWORK = {
 'DEFAULT_PERMISSION_CLASSES': [
-    'rest_framework.permissions.IsAuthenticated',
+    # 'rest_framework.permissions.IsAuthenticated',
+    'rest_framework.permissions.AllowAny',
 ]
 }
+CORS_ORIGIN_WHITELIST = (
+'http://localhost:8080',
+'http://127.0.0.10:8010',
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',

@@ -38,7 +38,7 @@ The project demonstrates API-driven architecture, CRUD functionality, and clean 
     │   └── setupTypeScript.js
     └── src
         ├── App.svelte
-        └── main.js
+        └── main.js 
 
 
 ---
